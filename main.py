@@ -35,15 +35,15 @@ if __name__=='__main__':
                 #length:长度
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
-    rand.genTree(lowbound, upbound,maxDepth, unique = False)
+    rand.genTree(lowbound, upbound,vertice, unique = False)
                 #lowbound:随机数下界
                 #uppbound:随机数上界
-                #maxDepth:最大深度
+                #vertice:点数
                 #unique:元素是否唯一
-    rand.genBST(lowbound, upbound,maxDepth)
+    rand.genBST(lowbound, upbound,vertice)
                 #lowbound:随机数下界
                 #uppbound:随机数上界
-                #maxDepth:最大深度
+                #vertice:点数
     rand.genGraph(vertice,edge,dircted = False,connected = False)
                 #vertice: 点数
                 #edge:边数

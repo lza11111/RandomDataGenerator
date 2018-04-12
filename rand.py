@@ -103,7 +103,7 @@ def genGraph(vertice,edge,dircted = False,connected = False):
             break
     return nodeList
 
-def genTree(lowbound, upbound,maxDepth, unique = False):
+def genTree(lowbound, upbound,vertice, unique = False):
     #if (unique and nodes > upbound - lowbound + 1) or nodes < 1:
     #    return None
     head = TreeNode(genInt(lowbound, upbound))   
@@ -116,7 +116,7 @@ def genTree(lowbound, upbound,maxDepth, unique = False):
         length = q.qsize()
         Idx = genInt(0, length - 1)
         for i in range(length):
-            if count == maxDepth:
+            if count == vertice:
                 return head
             node = q.get()
             if i == Idx:
@@ -125,7 +125,7 @@ def genTree(lowbound, upbound,maxDepth, unique = False):
                 roll = genInt(0, 3)
 
             num = (roll + 1) // 2
-            if count + num > maxDepth:
+            if count + num > vertice:
                 roll = genInt(1, 2)
             if roll == 0:
                 continue
@@ -161,14 +161,14 @@ def genTree(lowbound, upbound,maxDepth, unique = False):
 
     return head
 
-def genBST(lowbound, upbound,maxDepth):
-    if maxDepth > upbound - lowbound + 1:
+def genBST(lowbound, upbound,vertice):
+    if vertice > upbound - lowbound + 1:
         return None
     head = TreeNode(genInt(lowbound,upbound))
     res = []
     count = 1
     res.append(head.val)
-    while count < maxDepth:
+    while count < vertice:
         ele = genInt(lowbound, upbound)
         while ele in res:
             ele = genInt(lowbound, upbound)
