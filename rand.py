@@ -15,21 +15,29 @@ def genBool():
 def genFloat(lowbound,upbound,eps):
     return round(random.uniform(lowbound,upbound),eps)
 
-def genChar(isUpper = True,isLower = True):
-    if isUpper == True and isLower == True:
-        return random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
-    elif isLower == True:
-        return random.choice('abcdefghijklmnopqrstuvwxyz')
-    elif isUpper == True:
-        return random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+def genChar(isUpper = True,isLower = True,isNumber = True,isSpecial = True,customList = None):
+    s = ""
+    if customList is not None:
+        for char in customList:
+            s += char
+        return rndChoice(s)
+    if isLower == True:
+        s += 'abcdefghijklmnopqrstuvwxyz'
+    if isUpper == True:
+        s += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    if isNumber == True:
+        s += '0123456789'
+    if isSpecial == True:
+        s += r'!@#$%^&*()_+-=[]{};\':\",./<?>\|`'
+    return rndChoice(s)
 
 def rndChoice(rndlist):
     return random.choice(rndlist)
 
-def genString(length,isUpper = True,isLower = True):
+def genString(length,isUpper = True,isLower = True,isNumber = True,isSpecial = True,customList = None):
     s = ""
     for _ in range(length):
-        s += genChar(isLower=isLower,isUpper=isUpper)
+        s += genChar(isLower=isLower,isUpper=isUpper,isNumber=isNumber,isSpecial=isSpecial,customList=customList)
     return s
 
 def genList(randfunc,

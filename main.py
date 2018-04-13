@@ -8,9 +8,12 @@ if __name__=='__main__':
     rand.genInt(lowbound,upbound)   
                 #lowbound:随机数下界 
                 #upbound:随机数上界 
-    rand.genChar(isUpper = True, isLower = True)   
+    rand.genChar(isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None)   
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
+                #isNumber:包含数字
+                #isSpecial:包含特殊符号
+                #customList:自定义随机列表
     rand.genFloat(lowbound,upbound,eps) 
                 #lowbound:随机数下界 
                 #upbound:随机数上界 
@@ -31,16 +34,19 @@ if __name__=='__main__':
                 #uppbound:随机数上界
                 #sorted:是否排序
                 #unique:元素是否唯一
-    rand.genString(length,isUpper = True, isLower = True) 
+    rand.genString(length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None) 
                 #length:长度
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
-    rand.genTree(lowbound, upbound,vertice, unique = False)
+                #isNumber:包含数字
+                #isSpecial:包含特殊符号
+                #customList:自定义随机列表
+    rand.genTree(lowbound, upbound, vertice, unique = False)
                 #lowbound:随机数下界
                 #uppbound:随机数上界
                 #vertice:点数
                 #unique:元素是否唯一
-    rand.genBST(lowbound, upbound,vertice)
+    rand.genBST(lowbound, upbound, vertice)
                 #lowbound:随机数下界
                 #uppbound:随机数上界
                 #vertice:点数
@@ -68,5 +74,5 @@ if __name__=='__main__':
     printer.printGraph(nodeList)
                 #nodeList:包含GraphNode的list
     """
-    
+
     
