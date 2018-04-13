@@ -21,13 +21,15 @@ if __name__=='__main__':
     rand.genBool()
     rand.rndChoice(rndlist)        
                 #rndlist: 随机返回rndlist中的一个元素
-    rand.genList(randfunc,**kwargs, length,dimen = 1, sorted = False, unique = False) 
+    rand.genList(randfunc,**kwargs, length,dimen = 1, sorted = False, unique = False, include = None, exception = []) 
                 #randfunc: 随机函数
                 #**kwargs: 随机函数参数表
                 #length:长度
                 #dimen:维度
                 #sorted:是否排序
                 #unique:元素是否唯一
+                #include: 必定包含的元素
+                #exception: 必定不包含的元素
     rand.genLinkedList(length, lowbound, upbound, sorted = False, unique = False)
                 #length:长度
                 #lowbound:随机数下界
@@ -75,4 +77,4 @@ if __name__=='__main__':
                 #nodeList:包含GraphNode的list
     """
 
-    
+

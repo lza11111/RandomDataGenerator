@@ -45,12 +45,12 @@ def genList(randfunc,
             dimen = 1,
             sorted = False,
             unique = False,
-            prevList = None,
+            include = None,
             exception = [],
             **kwargs):
     temp = []
-    if prevList is not None:
-        temp = prevList
+    if include is not None:
+        temp = include
     if dimen > 1:
         for _ in range(length):
             temp.append(genList(randfunc,length,dimen - 1,sorted = sorted,unique = unique,**kwargs))
