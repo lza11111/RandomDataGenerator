@@ -2,19 +2,21 @@ from util.Graph import GraphNode
 from util.Tree import TreeNode
 import queue
 
+def printBase(obj):
+    if isinstance(obj,list):
+        printList(obj)
+    elif isinstance(obj,str):
+        printString(obj)
+    else:
+        print(obj,end='')
+
 def printList(lst):    #打印数组
     print('[',end='')
     if len(lst) > 0:
-        if type(lst[0]) == list:
-                printList(lst[0])
-        else:
-            print(str(lst[0]),end='')
+        printBase(lst[0])
         for i in range(1,len(lst)):
             print(',',end='')
-            if type(lst[i]) == list:
-                printList(lst[i])
-            else:
-                print(str(lst[i]),end='')
+            printBase(lst[i])
     print(']',end='')
 
 def printLinkedList(listNode):
@@ -88,12 +90,7 @@ def printFunc(name,*args):
         if argcnt > 0:
             print(',',end='')
         argcnt += 1
-        if isinstance(_,str):
-            printString(_)
-        elif isinstance(_,list):
-            printList(_)
-        else:
-            print(_,end='')
+        printBase(_)
     print(")",end='')
 
 

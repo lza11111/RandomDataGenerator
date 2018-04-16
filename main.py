@@ -21,10 +21,10 @@ if __name__=='__main__':
     rand.genBool()
     rand.rndChoice(rndlist)        
                 #rndlist: 随机返回rndlist中的一个元素
-    rand.genList(randfunc,**kwargs, length,dimen = 1, sorted = False, unique = False, include = None, exception = []) 
+    rand.genList(randfunc,**kwargs, list_length ,dimen = 1, sorted = False, unique = False, include = None, exception = []) 
                 #randfunc: 随机函数
                 #**kwargs: 随机函数参数表
-                #length:长度
+                #list_length:长度
                 #dimen:维度
                 #sorted:是否排序
                 #unique:元素是否唯一
@@ -36,8 +36,8 @@ if __name__=='__main__':
                 #uppbound:随机数上界
                 #sorted:是否排序
                 #unique:元素是否唯一
-    rand.genString(length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None) 
-                #length:长度
+    rand.genString(str_length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None) 
+                #str_length:长度
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
                 #isNumber:包含数字

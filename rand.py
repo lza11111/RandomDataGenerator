@@ -34,14 +34,14 @@ def genChar(isUpper = True,isLower = True,isNumber = True,isSpecial = True,custo
 def rndChoice(rndlist):
     return random.choice(rndlist)
 
-def genString(length,isUpper = True,isLower = True,isNumber = True,isSpecial = True,customList = None):
+def genString(str_length,isUpper = True,isLower = True,isNumber = True,isSpecial = True,customList = None):
     s = ""
-    for _ in range(length):
+    for _ in range(str_length):
         s += genChar(isLower=isLower,isUpper=isUpper,isNumber=isNumber,isSpecial=isSpecial,customList=customList)
     return s
 
 def genList(randfunc,
-            length,
+            list_length,
             dimen = 1,
             sorted = False,
             unique = False,
@@ -52,10 +52,10 @@ def genList(randfunc,
     if include is not None:
         temp = include
     if dimen > 1:
-        for _ in range(length):
-            temp.append(genList(randfunc,length,dimen - 1,sorted = sorted,unique = unique,**kwargs))
+        for _ in range(list_length):
+            temp.append(genList(randfunc,list_length,dimen - 1,sorted = sorted,unique = unique,**kwargs))
     else:
-        for _ in range(length-len(temp)):
+        for _ in range(list_length-len(temp)):
             t = randfunc(**kwargs)
             while unique and t in temp or t in exception:
                 t = randfunc(**kwargs)
@@ -98,7 +98,7 @@ def genGraph(vertice,edge,dircted = False,connected = False):
                 unique = True,
                 prevList = node.next,
                 exception = [node.val],
-                length = min((edge + 1) // vertice, edgeRemain)
+                list_length = min((edge + 1) // vertice, edgeRemain)
             )
             edgeRemain -= (edge + 1) // vertice
             if dircted == False:
