@@ -37,7 +37,7 @@ if __name__=='__main__':
                 #sorted:是否排序
                 #unique:元素是否唯一
     rand.genString(str_length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None) 
-                #str_length:长度
+                #str_length:长度(可以是rand.genInt,需要提供参数)
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
                 #isNumber:包含数字
