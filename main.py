@@ -36,12 +36,13 @@ if __name__=='__main__':
                 #uppbound:随机数上界
                 #sorted:是否排序
                 #unique:元素是否唯一
-    rand.genString(str_length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, customList = None) 
+    rand.genString(str_length, isUpper = True, isLower = True, isNumber = True, isSpecial = True, unique = False, customList = None) 
                 #str_length:长度(可以是rand.genInt,需要提供参数)
                 #isUpper:包含大写字母 
                 #isLower:包含小写字母
                 #isNumber:包含数字
                 #isSpecial:包含特殊符号
+                #unique:元素是否唯一
                 #customList:自定义随机列表
     rand.genTree(lowbound, upbound, vertice, unique = False)
                 #lowbound:随机数下界
@@ -76,5 +77,5 @@ if __name__=='__main__':
     printer.printGraph(nodeList)
                 #nodeList:包含GraphNode的list
     """
-
+    
 

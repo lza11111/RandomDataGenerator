@@ -34,12 +34,16 @@ def genChar(isUpper = True,isLower = True,isNumber = True,isSpecial = True,custo
 def rndChoice(rndlist):
     return random.choice(rndlist)
 
-def genString(str_length,isUpper = True,isLower = True,isNumber = True,isSpecial = True,customList = None,**kwargs):
+def genString(str_length,isUpper = True,isLower = True,isNumber = True,isSpecial = True,unique = False,customList = None,**kwargs):
     s = ""
     if not isinstance(str_length,int):
         str_length = str_length(**kwargs)
     for _ in range(str_length):
-        s += genChar(isLower=isLower,isUpper=isUpper,isNumber=isNumber,isSpecial=isSpecial,customList=customList)
+        while True:
+            char = genChar(isLower=isLower,isUpper=isUpper,isNumber=isNumber,isSpecial=isSpecial,customList=customList)
+            if not unique or char not in s :
+                break
+        s += char
     return s
 
 def genList(randfunc,
